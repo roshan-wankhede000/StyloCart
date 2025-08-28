@@ -11,7 +11,7 @@ const passport = require("passport")
 
 dotenv.config()
 
-const port = process.env.PORT
+const port = process.env.PORT || 8000
 const _dirname = path.resolve()
 
 // MongoDB connection
