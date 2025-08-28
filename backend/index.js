@@ -11,7 +11,7 @@ const passport = require("passport")
 
 dotenv.config()
 
-const PORT = process.env.PORT
+const port = process.env.PORT
 const _dirname = path.resolve()
 
 // MongoDB connection
@@ -52,4 +52,4 @@ app.get(/.*/,(req,res)=>{
   res.sendFile(path.resolve(_dirname, "frontend", "dist", "index.html"))
 })
 
-app.listen(PORT,() => console.log("Server started on http://localhost:3000"));
+app.listen(port,() => console.log("Server started on http://localhost:3000"));
