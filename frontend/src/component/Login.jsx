@@ -17,7 +17,7 @@ function Login() {
       return;
     }
 
-    axios.post("http://localhost:3000/login", { email, password }, { withCredentials: true })
+    axios.post("https://stylocart.onrender.com/login", { email, password }, { withCredentials: true })
       .then((res) => {
         if (res.status === 200) {
           toast.success("Login successful!");

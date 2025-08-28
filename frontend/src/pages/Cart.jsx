@@ -15,7 +15,7 @@ function Cart() {
 
   const fetchCart = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/getCart", { withCredentials: true });
+      const res = await axios.get("https://stylocart.onrender.com/getCart", { withCredentials: true });
       setCartItems(res.data.cartItems);
 
       // Subtotal Calculation
@@ -41,7 +41,7 @@ function Cart() {
         {cartItems.map((item, i) => (
           <div key={i} className="row align-items-center bg-white p-3 border-bottom rounded my-2">
             <div className="col-md-1">
-              <img src={`http://localhost:3000/uploads/${item.image}`} alt="Product" className="img-fluid cart-img" />
+              <img src={`https://stylocart.onrender.com/uploads/${item.image}`} alt="Product" className="img-fluid cart-img" />
             </div>
             <div className="col-md-6">
               <h6>{item.name}</h6>

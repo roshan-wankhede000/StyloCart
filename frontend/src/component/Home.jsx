@@ -34,7 +34,7 @@ useEffect(() => {
         <div className="d-flex justify-content-center align-items-center gap-3 flex-wrap">
          {latestProduct ? latestProduct.map((product,i) => (
           <Link to={`/productDetail/${product._id}`} key={i} className="product-card text-decoration-none">
-          <img src={`http://localhost:3000/uploads/${product.image1}`} className='img-fluid' alt="product image" />
+          <img src={`https://stylocart.onrender.com/uploads/${product.image1}`} className='img-fluid' alt="product image" />
           <p className="m-0 text">{product.name}</p>
           <p className="fw-bold" style={{color:'#374151',}}>${product.price}</p>
           </Link>

@@ -9,7 +9,7 @@ function Allitems() {
 
   async function deleteItem(id) {
     try {
-      const res = await axios.delete(`http://localhost:3000/deleteitems/${id}`);
+      const res = await axios.delete(`https://stylocart.onrender.com/deleteitems/${id}`);
       navigate("/allitems"); 
       window.location.reload()
     } catch (err) {
@@ -49,7 +49,7 @@ function Allitems() {
               <tbody>
                 {productsItems && productsItems.map((product, i) => (
                   <tr key={i}>
-                    <td><img src={`http://localhost:3000/uploads/${product.image1}`} className="product-img" alt="Product" /></td>
+                    <td><img src={`https://stylocart.onrender.com/uploads/${product.image1}`} className="product-img" alt="Product" /></td>
                     <td>{product.name}</td>
                     <td>{product.category}</td>
                     <td>{product.price} $</td>

@@ -8,7 +8,7 @@ function Orders() {
   useEffect(() => {
     async function fetchOrders() {
       try {
-        const res = await axios.get("http://localhost:3000/getorders", {
+        const res = await axios.get("https://stylocart.onrender.com/getorders", {
           withCredentials: true
         });
         setOrders(res.data.orders);
@@ -40,7 +40,7 @@ function Orders() {
       <div key={`${index}-${i}`} className="order-box d-flex justify-content-between flex-wrap border-bottom align-items-center mb-3">
         <div className="d-flex">
           <img
-            src={`http://localhost:3000/uploads/${product.image}`}
+            src={`https://stylocart.onrender.com/uploads/${product.image}`}
             alt="Product"
             className="order-img me-3"
             width="100"

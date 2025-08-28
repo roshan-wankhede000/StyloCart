@@ -14,7 +14,7 @@ import { useEffect } from "react";
       const handleSubmit = (e)=>{
         e.preventDefault()
         const data=new FormData(e.target)
-          axios.post("http://localhost:3000/addproduct", data,{
+          axios.post("https://stylocart.onrender.com/addproduct", data,{
             headers: { "Content-Type": "multipart/form-data" }
 
           })

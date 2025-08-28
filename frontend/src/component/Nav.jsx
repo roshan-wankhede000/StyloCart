@@ -18,7 +18,7 @@ function Nav() {
   const navigate = useNavigate();
 
 const handleLogout = () => {
-  axios.get("http://localhost:3000/logout", { withCredentials: true })
+  axios.get("https://stylocart.onrender.com/logout", { withCredentials: true })
     .then((res) => {
       window.location.reload(); // 🔁 Refresh navbar UI
     })

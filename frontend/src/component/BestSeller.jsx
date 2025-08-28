@@ -34,7 +34,7 @@ function BestSeller() {
         {latestProduct.map((product,i) => (
         <Link to={`/productDetail/${product._id}`} key={i} className='text-decoration-none'>
           <div key={i} className="product-card ">
-        <img src={`http://localhost:3000/uploads/${product.image1}`} className='img-fluid' alt="product image" />
+        <img src={`https://stylocart.onrender.com/uploads/${product.image1}`} className='img-fluid' alt="product image" />
         <p className="m-0" style={{color:'#374151',}}>{product.name}</p>
         <p className="fw-bold" style={{color:'#374151',}}>${product.price}</p>
        </div>

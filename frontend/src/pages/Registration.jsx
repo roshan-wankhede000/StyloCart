@@ -12,13 +12,13 @@ function Register() {
   } = useForm();
 
   const onSubmit = (data) => {
-    axios.post("http://localhost:3000/add", data)
+    axios.post("https://stylocart.onrender.com/add", data)
       .then(() => navigate("/login"))
       .catch((err) => console.log(err.response));
   };
 
   const handleGoogleLogin = () => {
-    window.open("http://localhost:3000/auth/google", "_self");
+    window.open("https://stylocart.onrender.com/auth/google", "_self");
   };
 
   return (

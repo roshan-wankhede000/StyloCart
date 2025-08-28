@@ -178,7 +178,7 @@ function Collection() {
                     className="product-card text-decoration-none"
                   >
                     <img
-                      src={`http://localhost:3000/uploads/${product.image1}`}
+                      src={`https://stylocart.onrender.com/uploads/${product.image1}`}
                       className="img-fluid"
                       alt="product"
                     />

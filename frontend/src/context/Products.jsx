@@ -10,7 +10,7 @@ function Products({ children }) {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/getproduct");
+        const response = await axios.get("https://stylocart.onrender.com/getproduct");
         setProductsItems(response.data);
       } catch (err) {
         console.error("Error fetching products:", err);

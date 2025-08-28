@@ -48,8 +48,8 @@ useEffect(()=>{
       size: size,
       quantity: 1
     };
-    const response = await axios.post(`http://localhost:3000/addToCart/${ProductDetails._id}`, data, {
-      withCredentials: true // ✅ Cookie को backend तक भेजेगा
+    const response = await axios.post(`https://stylocart.onrender.com/addToCart/${ProductDetails._id}`, data, {
+      withCredentials: true 
     });
     alert("Product added to cart!");
   } catch (err) {
@@ -73,21 +73,21 @@ useEffect(()=>{
             <div className="row">
               <div className="col-md-3">
                 <div className="mb-2">
-                  {ProductDetails.image1 ? <img src={`http://localhost:3000/uploads/${ProductDetails.image1}`} onClick={()=>setImage(ProductDetails.image1)} className="img-fluid" alt="Thumbnail 1" /> : ''}   
+                  {ProductDetails.image1 ? <img src={`https://stylocart.onrender.com/uploads/${ProductDetails.image1}`} onClick={()=>setImage(ProductDetails.image1)} className="img-fluid" alt="Thumbnail 1" /> : ''}   
                 </div>
                 <div className="mb-2">
-                   {ProductDetails.image2 ? <img src={`http://localhost:3000/uploads/${ProductDetails.image2}`} onClick={()=>setImage(ProductDetails.image2)} className="img-fluid" alt="Thumbnail 2" /> : <img src={`http://localhost:3000/uploads/${ProductDetails.image2}`} onClick={()=>setImage(ProductDetails.image2)} className="img-fluid d-none" alt="Thumbnail 2" />}
+                   {ProductDetails.image2 ? <img src={`https://stylocart.onrender.com/uploads/${ProductDetails.image2}`} onClick={()=>setImage(ProductDetails.image2)} className="img-fluid" alt="Thumbnail 2" /> : <img src={`https://stylocart.onrender.com/uploads/${ProductDetails.image2}`} onClick={()=>setImage(ProductDetails.image2)} className="img-fluid d-none" alt="Thumbnail 2" />}
                 </div>
                 <div className="mb-2">
-                  {ProductDetails.image3 ? <img src={`http://localhost:3000/uploads/${ProductDetails.image3}`} onClick={()=>setImage(ProductDetails.image3)} className="img-fluid" alt="Thumbnail 2" /> : <img src={`http://localhost:3000/uploads/${ProductDetails.image3}`} onClick={()=>setImage(ProductDetails.image3)} className="img-fluid d-none" alt="Thumbnail 3" />}
+                  {ProductDetails.image3 ? <img src={`https://stylocart.onrender.com/uploads/${ProductDetails.image3}`} onClick={()=>setImage(ProductDetails.image3)} className="img-fluid" alt="Thumbnail 2" /> : <img src={`https://stylocart.onrender.com/uploads/${ProductDetails.image3}`} onClick={()=>setImage(ProductDetails.image3)} className="img-fluid d-none" alt="Thumbnail 3" />}
                 </div>
                 <div className="mb-2">
-                  {ProductDetails.image4 ? <img src={`http://localhost:3000/uploads/${ProductDetails.image4}`} onClick={()=>setImage(ProductDetails.image4)} className="img-fluid" alt="Thumbnail 2" /> : <img src={`http://localhost:3000/uploads/${ProductDetails.image4}`} onClick={()=>setImage(ProductDetails.image4)} className="img-fluid d-none" alt="Thumbnail 4" />}
+                  {ProductDetails.image4 ? <img src={`https://stylocart.onrender.com/uploads/${ProductDetails.image4}`} onClick={()=>setImage(ProductDetails.image4)} className="img-fluid" alt="Thumbnail 2" /> : <img src={`https://stylocart.onrender.com/uploads/${ProductDetails.image4}`} onClick={()=>setImage(ProductDetails.image4)} className="img-fluid d-none" alt="Thumbnail 4" />}
                 </div>
                 
               </div>
               <div className="col-md-9">
-                <img src={`http://localhost:3000/uploads/${image}`} className="" alt="Main Product" />
+                <img src={`https://stylocart.onrender.com/uploads/${image}`} className="" alt="Main Product" />
               </div>
             </div>
           </div>
@@ -141,7 +141,7 @@ useEffect(()=>{
         <div className="d-flex justify-content-center align-items-center gap-3 flex-wrap">
         {relatedProduct.map((product, i) => (
           <Link to={`/productDetail/${product._id}`} key={i} className="product-card text-decoration-none text-secondary">
-              <img src={`http://localhost:3000/uploads/${product.image1}`} className="img-fluid" alt="" />
+              <img src={`https://stylocart.onrender.com/uploads/${product.image1}`} className="img-fluid" alt="" />
               <p className="m-0">{product.name}</p>
               <p className="fw-bold" style={{ color: "#374151" }}>
                 ${product.price}

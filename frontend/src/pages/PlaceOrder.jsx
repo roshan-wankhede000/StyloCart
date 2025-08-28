@@ -24,7 +24,7 @@ function PlaceOrder() {
   useEffect(() => {
   const fetchCart = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/getCart", {
+      const res = await axios.get("https://stylocart.onrender.com/getCart", {
         withCredentials: true
       });
       setCartItems(res.data.cartItems);
@@ -46,7 +46,7 @@ function PlaceOrder() {
 
   const orderHandle = async () => {
     try {
-      const res = await axios.post("http://localhost:3000/placeorder", formData, {
+      const res = await axios.post("https://stylocart.onrender.com/placeorder", formData, {
         withCredentials: true // 🧠 Required to send cookies
       });
 

@@ -8,7 +8,7 @@ function Login() {
     let [password,setPassword] = useState()
     function logInUser(e) {
         e.preventDefault();
-        axios.post("http://localhost:3000/login",{ email,password },{
+        axios.post("https://stylocart.onrender.com/login",{ email,password },{
             withCredentials: true // <-- This allows cookies to be sent/stored
         }).then((res)=>{console.log("Success, dictionary sent,");
             navigate("/");

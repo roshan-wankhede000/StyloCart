@@ -12,20 +12,17 @@ function Card({ data }) {
           smallImage: {
             alt: `Image of ${data.name}`,
            
-            src: `http://localhost:3000/uploads/${data.image}`,
+            src: `https://stylocart.onrender.com/uploads/${data.image}`,
             width: 200,
             height: 200,
           },
           largeImage: {
-            src: `http://localhost:3000/uploads/${data.image}`,
+            src: `https://stylocart.onrender.com/uploads/${data.image}`,
             width: 500,
             height: 800,
           },
         }}
       />
-
-      {/* Regular image fallback or additional use */}
-      {/* <img src={`http://localhost:3000/uploads/${data.image}`} alt={data.name} /> */}
     </>
   );
 }

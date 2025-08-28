@@ -12,7 +12,7 @@ function Register() {
   } = useForm();
 
   const onSubmit = (data) => {
-    axios.post("http://localhost:3000/add", data)
+    axios.post("https://stylocart.onrender.com/add", data)
       .then((res) => {
         console.log("Success, dictionary sent,");
         navigate("/login");
@@ -24,7 +24,7 @@ function Register() {
 
   const handleGoogleLogin = () => {
     // This opens the Google OAuth login in a new tab
-    window.open("http://localhost:3000/auth/google", "_self");
+    window.open("https://stylocart.onrender.com/auth/google", "_self");
   };
 
   return (

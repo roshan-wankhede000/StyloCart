@@ -23,7 +23,7 @@ router.get('/auth/google/callback',
       secure: false
     });
 
-    res.redirect('http://localhost:3000/');
+    res.redirect('https://stylocart.onrender.com/');
   }
 );
 

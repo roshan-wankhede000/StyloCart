@@ -7,7 +7,7 @@ function Allorders(props) {
   useEffect(()=>{
     let allOrders = async()=>{
       try{
-     let response = await axios.get("http://localhost:3000/getAllOrders");
+     let response = await axios.get("https://stylocart.onrender.com/getAllOrders");
      setOrderData(response.data)
       }catch(error){
         console.log(error);
@@ -39,7 +39,7 @@ function Allorders(props) {
   <div className="order-card" key={i}>
     <div className="row">
       <div className="col-md-1 d-flex align-items-start">
-        <img src={`http://localhost:3000/uploads/${product.products[0]?.image}`} alt="product" className="order-img" />
+        <img src={`https://stylocart.onrender.com/uploads/${product.products[0]?.image}`} alt="product" className="order-img" />
       </div>
       <div className="col-md-6">
         {product.products.map((item, index) => (
