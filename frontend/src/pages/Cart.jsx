@@ -4,7 +4,10 @@ import bin_icon from "../assets/frontend_assets/bin_icon.png"
 import line from "../assets/frontend_assets/line.png";
 import { Link } from 'react-router-dom';
 
+
 function Cart() {
+
+
   const [cartItems, setCartItems] = useState([]);
   const [subtotal, setSubtotal] = useState(0);
 
