@@ -1,10 +1,9 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useEffect, useState } from 'react';
 import logo from "../assets/frontend_assets/logo.png";
 import searchIcon from "../assets/frontend_assets/search_icon.png";
 import profileIcon from "../assets/frontend_assets/profile_icon.png";
 import cartIcon from "../assets/frontend_assets/cart_icon.png";
 import { Link, NavLink, useNavigate } from 'react-router-dom';
-import { productContext } from '../context/Products';
 import axios from 'axios';
 
 function getCookie(name) {
@@ -15,7 +14,6 @@ function getCookie(name) {
 }
 
 function Nav() {
-  let {cartLength} = useContext(productContext) 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const navigate = useNavigate();
 
@@ -76,7 +74,7 @@ const handleLogout = () => {
             <div className="position-relative">
               <NavLink to="/cart">
                 <img src={cartIcon} className="nav-icon" alt="Cart" />
-                <p className="cart-icon-count">{cartLength}</p>
+                {/* <p className="cart-icon-count">0</p> */}
               </NavLink>
             </div>
 
