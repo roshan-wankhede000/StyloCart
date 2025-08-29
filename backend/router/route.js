@@ -2,7 +2,7 @@ let express = require("express");
 let router = express.Router();
 const { registerUser, checkLogin, logOut } = require("../controller/registerController");
 let { addproduct,getproduct } = require("../controller/productController");
-let {addToCart, getCart} = require("../controller/cartController")
+let {addToCart, getCart,removeFromCart} = require("../controller/cartController")
 const { placeOrder, getOrders } = require("../controller/orderController");
 let {getAllOrders, deleteitems} = require("../controller/adminController")
 const controller = require('../controller/orderController');
@@ -37,6 +37,7 @@ router.post(
 router.get("/getproduct",getproduct)
 router.post("/addToCart/:id",addToCart)
 router.get("/getCart",getCart)
+router.delete("/removeFromCart/:id",removeFromCart)
 router.post("/placeorder", placeOrder);
 router.get("/getorders",getOrders)
 

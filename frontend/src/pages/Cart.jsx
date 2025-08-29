@@ -4,10 +4,7 @@ import bin_icon from "../assets/frontend_assets/bin_icon.png"
 import line from "../assets/frontend_assets/line.png";
 import { Link } from 'react-router-dom';
 
-
 function Cart() {
-
-
   const [cartItems, setCartItems] = useState([]);
   const [subtotal, setSubtotal] = useState(0);
 
@@ -28,6 +25,19 @@ function Cart() {
       console.error("Error fetching cart:", err);
     }
   };
+
+  const removeFromCart = async (itemId) => {
+    try {
+      await axios.delete(`https://stylocart.onrender.com/removeFromCart/${itemId}`, { withCredentials: true });
+      const updatedCart = cartItems.filter(item => item._id !== itemId);
+      setCartItems(updatedCart);
+      const total = updatedCart.reduce((acc, item) => acc + item.totalPrice, 0);
+      setSubtotal(total);
+    } catch (err) {
+      console.error("Error removing item:", err);
+    }
+  };
+
 
   return (
     <>
@@ -56,7 +66,7 @@ function Cart() {
             </div>
             <div className="col-md-3 text-end">
               <button className="btn btn-link text-danger">
-                <img src={bin_icon} width='20' alt='remove cart' />
+                <img src={bin_icon} width='20' alt='remove cart' onClick={() => removeFromCart(item._id)}/>
               </button>
             </div>
           </div>

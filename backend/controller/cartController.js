@@ -71,4 +71,32 @@ const getCart = async (req, res) => {
   }
 };
 
-module.exports = { addToCart, getCart };
+const removeFromCart = async (req, res) => {
+  try {
+    const email = req.cookies.email;
+    const { id } = req.params; // cart item id (_id in Cart collection)
+
+    if (!email) {
+      return res.status(401).json({ error: "User not logged in" });
+    }
+
+    const deletedItem = await Cart.findOneAndDelete({ _id: id, email });
+
+    if (!deletedItem) {
+      return res.status(404).json({ error: "Cart item not found" });
+    }
+
+    // return updated cart also
+    const cartItems = await Cart.find({ email });
+
+    res.json({
+      message: "Item removed successfully",
+      cartItems
+    });
+  } catch (err) {
+    console.error("Error removing cart item:", err);
+    res.status(500).json({ error: "Server error" });
+  }
+}
+
+module.exports = { addToCart, getCart, removeFromCart };
