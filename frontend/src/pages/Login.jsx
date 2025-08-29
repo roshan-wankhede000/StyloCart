@@ -30,7 +30,7 @@ function Login() {
       </div>
       <div className="form-footer">
         <a href="#">Forgot your password?</a>
-        <Link to="/registration">Create account</Link>
+        <Link to="/registration">Create Account <i class="bi bi-arrow-right"></i></Link>
       </div>
       <div className="text-center mt-4">
         <button type="submit" className="btn btn-custom px-5">Sign In</button>

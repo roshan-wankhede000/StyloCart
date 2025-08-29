@@ -29,7 +29,7 @@ mongoose.connect(process.env.MONGO_URL)
 
 app.use(passport.initialize());
 app.use(passport.session());
-const authRoutes = require('./router/auth'); // replace with correct path
+const authRoutes = require('./router/auth'); 
 app.use('/', authRoutes); // makes /auth/google route available
 
 app.use(cookieParser());
