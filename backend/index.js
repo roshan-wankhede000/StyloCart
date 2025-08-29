@@ -8,6 +8,8 @@ const mongoose = require("mongoose");
 const route = require("./router/route");
 const session = require('express-session');
 const passport = require("passport")
+const cron = require("node-cron");
+const axios = require("axios");
 
 dotenv.config()
 
@@ -52,4 +54,15 @@ app.get(/.*/,(req,res)=>{
   res.sendFile(path.resolve(_dirname, "frontend", "dist", "index.html"))
 })
 
-app.listen(port,() => console.log("Server started on http://localhost:3000"));
+// Schedule: every 10 minutes
+cron.schedule("*/10 * * * *", async () => {
+  try {
+    console.log("⏰ Cron job running: calling project URL");
+    await axios.get(process.env.APP_URL); 
+  } catch (err) {
+    console.error("Cron job failed:", err.message, err.response?.status || "");
+  }
+});
+
+app.listen(port, () => console.log(`✅ Server started on http://localhost:${port}`));
+
